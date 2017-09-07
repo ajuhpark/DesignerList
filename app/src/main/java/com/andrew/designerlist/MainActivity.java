@@ -1,5 +1,8 @@
-package com.andrew.designerlist;
+/*
+Is this the right way to do it? Or should I have just uploaded this MainActivity java file?
+*/
 
+package com.andrew.designerlist;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;

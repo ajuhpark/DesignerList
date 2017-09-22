@@ -1,6 +1,7 @@
 package com.andrew.designerlist.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -52,7 +53,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Designer designer = designers.get(position);
-                        Toast.makeText(MainActivity.this, designer.getName(), Toast.LENGTH_LONG).show();
+                        showDesignerDetail(designer);
                     }
                 }
         );
@@ -64,6 +65,12 @@ public class MainActivity extends Activity {
         for (int i = 0; i < designersStringArray.length; i++) {
             designers.add(new Designer(designersStringArray[i]));
         }
+    }
+
+    private void showDesignerDetail(Designer designer) {
+        Intent intent = new Intent(this, DesignerDetailActivity.class);
+        intent.putExtra(Designer.DESIGNER_NAME_EXTRA, designer.getName());
+        startActivity(intent);
     }
 }
 

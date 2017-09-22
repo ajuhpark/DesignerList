@@ -5,6 +5,8 @@ package com.andrew.designerlist.models;
  */
 
 public class Designer {
+    public static final String DESIGNER_NAME_EXTRA = "designer_name";
+
     private String name;
 
     public Designer(String name) {

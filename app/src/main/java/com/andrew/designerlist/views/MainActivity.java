@@ -19,6 +19,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     private DesignerAdapter adapter;
+    private ArrayList<Designer> designers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,8 @@ public class MainActivity extends Activity {
         list items 1 for text list.
          */
 
-        adapter = new DesignerAdapter(this, R.layout.designer_list_item, populateDesignerList());
+        populateDesignerList();
+        adapter = new DesignerAdapter(this, R.layout.designer_list_item, designers);
         /*
         create a reference to the list
          */
@@ -49,23 +51,19 @@ public class MainActivity extends Activity {
                 new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String designers = String.valueOf(parent.getItemAtPosition(position));
-                        Toast.makeText(MainActivity.this, designers, Toast.LENGTH_LONG).show();
-
+                        Designer designer = designers.get(position);
+                        Toast.makeText(MainActivity.this, designer.getName(), Toast.LENGTH_LONG).show();
                     }
                 }
         );
-
     }
 
-    private List<Designer> populateDesignerList() {
+    private void populateDesignerList() {
         String[] designersStringArray = {"Robert Geller", "Native Son", "Ace & Jig", "The Row", "Lemaire", "Siki Im"};
-        List<Designer> designers = new ArrayList<Designer>();
+        designers = new ArrayList<Designer>();
         for (int i = 0; i < designersStringArray.length; i++) {
             designers.add(new Designer(designersStringArray[i]));
         }
-
-        return designers;
     }
 }
 

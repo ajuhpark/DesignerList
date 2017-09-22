@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         String[] designers = {"Robert Geller", "Native Son", "Ace & Jig", "The Row", "Lemaire", "Siki Im"};
 
         /*
-        We need an adapter that's reponsible for conversion from
+        We need an adapter that's responsible for conversion from
         java code (the array) to list items that I can use.
         The ArrayAdapter object knows we're trying to convert the array
         to list items.  It takes in the parameters "this" and

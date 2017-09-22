@@ -59,6 +59,7 @@ public class MainActivity extends Activity {
         );
     }
 
+    //populate designer list
     private void populateDesignerList() {
         String[] designersStringArray = {"Robert Geller", "Native Son", "Ace & Jig", "The Row", "Lemaire", "Siki Im"};
         designers = new ArrayList<Designer>();

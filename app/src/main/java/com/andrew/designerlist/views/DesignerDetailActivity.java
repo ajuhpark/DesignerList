@@ -23,8 +23,10 @@ public class DesignerDetailActivity extends Activity {
         setContentView(R.layout.designer_detail_activity);
 
         designerNameTextView = (TextView) findViewById(R.id.designer_name);
-
+        //todo: Do I have to specify the class intent is coming from?
+        //hello
         Intent intent = getIntent();
+        //can also do Bundle bundle = getIntent().getExtras.
         Bundle bundle = intent.getExtras();
 
         if (bundle != null) {

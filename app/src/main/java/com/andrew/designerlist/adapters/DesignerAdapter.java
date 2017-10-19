@@ -30,6 +30,7 @@ public class DesignerAdapter extends ArrayAdapter<Designer> {
 
     @NonNull
     @Override
+    //todo: need to go over this method and its parameters.
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Designer designer = designers.get(position);
         LayoutInflater inflater = LayoutInflater.from(context);

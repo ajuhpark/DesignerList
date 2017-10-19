@@ -9,6 +9,7 @@ public class Designer {
 
     private String name;
 
+    //todo: not sure what's going on here.
     public Designer(String name) {
         this.name = name;
     }
